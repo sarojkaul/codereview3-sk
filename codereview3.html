@@ -1,0 +1,164 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet"
+          type="text/css"
+          media="screen"
+          href="StyleSheet1.css" />
+</head>
+
+<body>
+    <div class="headerContainer">
+        <header>
+            <div><img src="./img/logo.png" alt="logo" /></div>
+            <div><img src="./img/banner.png" alt="banner" /></div>
+        </header>
+        <div class="topnav">
+            <ul>
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+                <li>
+                    <a href="#Team">Team</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bannerarea">
+        <h1>Car insurance</h1>
+
+        <div class="row">
+            <div id=" regform">
+                <h1>Great Coverage begins<br />with a custom quote</h1>
+            </div>
+            <div class="col-lg-6">
+                <div ="coloumn12">
+                    <form action="">
+                        <div class="form-container">
+                            <div class="form-field">
+                                <label for="name">Your name:</label>
+                                <input id="name" type="text" name="name" />
+                            </div>
+
+                            <div class="form-field">
+                                <label for="age">Age:</label>
+                                <input id="age" type="number" name="age" />
+                            </div>
+                            <div class="form-field">
+                                <label class="country">Country</label>
+                                <select id="country" name="Austria" id="Austria">
+                                    <label>Country:</label>
+                                    <option value="austria">Austria</option>
+                                    <option value="hungry">Hungry</option>
+                                    <option value="greece">Greece</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="horsePower">Horsepower of your car:</label>
+                                <input id="horsePower" type="number" name="fname" />
+                            </div>
+                        </div>
+                        <button id="submit"
+                                type="button"
+                                class="btn"
+                                onclick="calculateInsurance()">
+                            Calculate
+                        </button>
+                    </form>
+                    <div id="result"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contentarea">
+        <div class="wrapper">
+            <p class="coverage">Un-comlicating car coverage</p>
+            <p>
+                understanding your coverage options shouldn't be so hard.<br />We'll
+                guide you through available coverage types,<br />starting with who and
+                what is covered.<br />
+            </p>
+        </div>
+    </div>
+    <section class="parent">
+        <section class="child">
+            <p class="heading">What comes standard</p>
+            <div>
+                The coverage you need
+                <ul>
+                    <li>&#10003; Bodily Injury Liability</li>
+                    <li>&#10003; Property Damage</li>
+                    <li>&#10003; Medical Payments</li>
+                </ul>
+                <br /><b>Benefits</b><br />12-month rate guarantee24/7 customer<br />Service
+                lifetime Repair Guarantee
+            </div>
+        </section>
+        <section class="child">
+            <p class="heading2">Add-on protection & coverge</p>
+            <div>
+                <p>For more peace of mind</p>
+                <ul>
+                    <li>&#10003; Better Car Replacement</li>
+                    <li>&#10003; Towing & Labor</li>
+                    <li>&#10003; Rental Car Coverage</li>
+                </ul>
+                <br /><b>Earned Benefits</b><br />Accidental Forgiveness\ New Car
+                <br />Replacement
+            </div>
+        </section>
+    </section>
+    <footer>
+        <div class="">
+            <ul>
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+                <li>
+                    <a href="#Team">Team</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footerImage">
+            <img src="./img/logo-inv.png" alt="" />
+        </div>
+        <h6>Saroj Kaul - CodeFactory 2018</h6>
+    </footer>
+    <script>
+        function calculateInsurance() {
+            
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var country = document.getElementById("country").value;
+            var horsePower = document.getElementById("horsePower").value;
+
+             var insurancePrice = 0;
+            switch (country) {
+                case "austria":
+                    insurancePrice = (horsePower * 100) / age + 50;
+                    break;
+                case "hungry":
+                    insurancePrice = (horsePower * 120) / age + 100;
+                    break;
+                case "greece":
+                    insurancePrice = (horsePower * 150) / (age + 3) + 50;
+                    break;
+                default:
+                    insurancePrice;
+            }
+
+            
+            document.getElementById(
+                "result"
+            ).innerHTML = `${name} your insurance costs ${insurancePrice}`;
+        }
+    </script>
+    <script type="text/javascript"
+            src="./js/scripts.js"
+            language="javascript"></script>
+</body>
+</html>
